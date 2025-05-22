@@ -1,5 +1,5 @@
-import './Contador.css'
-import { useState } from 'react'
+import './Contador.css';
+import { useState } from 'react';
 
 export default function Contador() {
     const [contador, setNumero] = useState(0);

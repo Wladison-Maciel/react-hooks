@@ -1,23 +1,16 @@
-import { useState } from "react";
-import Contador from "./components/Contador/Contador";
+import { use, useState } from "react";
+import './App.css'
 
 export default function App() {
+  const [backgroundColorValor, setBackgroundColor] = useState(true);
 
-  // const [situacao, setSituacao] = useState(true)
-
-  // function alternarSituacao() {
-  //   setSituacao(!situacao)
-  // }
-
-  
-
+  function mudarCor() {
+    setBackgroundColor(!backgroundColorValor);
+  }
 
   return (
-    <>
-      {/* <h2>Situação: {situacao ? "Ativo" : "Inativo"}</h2>
-      <button onClick={alternarSituacao}>Mudar Situação</button> */}
-      <Contador></Contador>
-
-    </>
+    <div style={{ backgroundColor: backgroundColorValor ? 'blue' : 'red' }}>
+      <button style={{backgroundColor: backgroundColorValor? 'red' : 'blue'}} onClick={mudarCor}>Mudar Cor</button>
+    </div>
   );
 }
