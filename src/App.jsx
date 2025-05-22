@@ -1,16 +1,19 @@
-import { use, useState } from "react";
+import { useState, useEffect } from 'react';
 import './App.css'
 
 export default function App() {
-  const [backgroundColorValor, setBackgroundColor] = useState(true);
 
-  function mudarCor() {
-    setBackgroundColor(!backgroundColorValor);
-  }
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/Wladison-Maciel')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  console.log(data)
 
   return (
-    <div style={{ backgroundColor: backgroundColorValor ? 'blue' : 'red' }}>
-      <button style={{backgroundColor: backgroundColorValor? 'red' : 'blue'}} onClick={mudarCor}>Mudar Cor</button>
-    </div>
+    <h1></h1>
   );
 }
