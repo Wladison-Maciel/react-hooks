@@ -15,7 +15,6 @@ export default function Contador() {
         setNumero(0);
     };
 
-    
     return (
         <div className='box'>
             <span>{contador}</span>
